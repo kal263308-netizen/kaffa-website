@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaffa Coffee Roasters</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f5f2eb;
+color:#333;
+}
+
+header{
+background:rgba(0,0,0,0.7);
+padding:15px 40px;
+position:fixed;
+width:100%;
+top:0;
+backdrop-filter:blur(8px);
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav h2{
+color:#fff;
+font-family:'Playfair Display',serif;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#c19a6b;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') no-repeat center center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:3rem;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+animation:fadeIn 2s ease;
+}
+
+.btn{
+background:#c19a6b;
+padding:12px 30px;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#a67c52;
+}
+
+.section{
+padding:100px 30px;
+text-align:center;
+}
+
+.dark{
+background:#2b1d15;
+color:white;
+}
+
+.menu-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+width:260px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.dark .card{
+background:#3b2a20;
+color:white;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<nav>
+<h2>Kaffa Coffee</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Brewed with Passion,<br>Served with Love.</h1>
+<a href="#menu" class="btn">View Menu</a>
+</div>
+</section>
+
+<section id="about" class="section">
+<h2>About Us</h2>
+<p>Kaffa Coffee Roasters is a premium cafe offering handcrafted coffee, fresh desserts and a cozy experience.</p>
+</section>
+
+<section id="menu" class="section dark">
+<h2>Our Signature Menu</h2>
+<div class="menu-grid">
+<div class="card">
+<h3>Espresso</h3>
+<p>Rich bold coffee shot</p>
+<p>₹120</p>
+</div>
+<div class="card">
+<h3>Cappuccino</h3>
+<p>Perfect milk & coffee blend</p>
+<p>₹180</p>
+</div>
+<div class="card">
+<h3>Brownie</h3>
+<p>Fresh chocolate dessert</p>
+<p>₹150</p>
+</div>
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2>Contact Us</h2>
+<p>📍 Premium Location</p>
+<p>📞 +91 9876543210</p>
+</section>
+
+<footer>
+<p>© 2026 Kaffa Coffee Roasters</p>
+</footer>
+
+<a href="https://wa.me/919876543210" class="whatsapp">💬</a>
+
+</body>
+  </html>
+  
