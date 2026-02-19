@@ -9,7 +9,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-body{font-family:'Poppins',sans-serif;background:#f5f2eb;color:#333;line-height:1.6;}
+body{font-family:'Poppins',sans-serif;background:#f5f2eb;color:#333;}
 
 header{
 background:rgba(0,0,0,0.7);
@@ -23,8 +23,7 @@ z-index:1000;
 nav{display:flex;justify-content:space-between;align-items:center;}
 nav h2{color:#fff;font-family:'Playfair Display',serif;}
 nav ul{list-style:none;display:flex;gap:25px;}
-nav a{color:#fff;text-decoration:none;transition:.3s;}
-nav a:hover{color:#c19a6b;}
+nav a{color:#fff;text-decoration:none;}
 
 .hero{
 height:100vh;
@@ -32,20 +31,6 @@ background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
 display:flex;align-items:center;justify-content:center;text-align:center;color:white;
 }
-.hero h1{
-font-size:3rem;
-font-family:'Playfair Display',serif;
-margin-bottom:20px;
-}
-.btn{
-background:#c19a6b;
-padding:14px 35px;
-color:white;
-text-decoration:none;
-border-radius:30px;
-transition:.3s;
-}
-.btn:hover{background:#a67c52;}
 
 .section{padding:100px 10%;text-align:center;}
 .dark{background:#2b1d15;color:white;}
@@ -57,9 +42,7 @@ gap:30px;margin-top:40px;
 .card{
 background:white;width:280px;border-radius:15px;
 overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.15);
-transition:.3s;
 }
-.card:hover{transform:translateY(-10px);}
 .card img{width:100%;height:200px;object-fit:cover;}
 .card-content{padding:20px;}
 .price{
@@ -80,14 +63,15 @@ width:100%;padding:12px;
 background:#c19a6b;color:white;border:none;
 border-radius:8px;font-size:16px;cursor:pointer;
 }
-form button:hover{background:#a67c52;}
 
-.contact-grid{
-display:flex;flex-wrap:wrap;gap:40px;
-justify-content:center;margin-top:40px;
+.payment-btn{
+padding:12px 25px;
+background:#28a745;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
 }
-.contact-info{flex:1;min-width:250px;}
-.map{flex:1;min-width:250px;}
 
 footer{
 background:#111;color:white;text-align:center;padding:20px;
@@ -98,7 +82,6 @@ position:fixed;bottom:20px;right:20px;
 background:#25D366;color:white;
 padding:15px;border-radius:50%;
 text-decoration:none;font-size:20px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -119,7 +102,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <section class="hero">
 <div>
 <h1>Brewed with Passion,<br>Served with Love.</h1>
-<a href="#reservation" class="btn">Reserve a Table</a>
+<a href="#reservation" style="background:#c19a6b;padding:14px 35px;color:white;border-radius:30px;text-decoration:none;">
+Reserve a Table
+</a>
 </div>
 </section>
 
@@ -134,35 +119,19 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <span class="price">₹120</span>
 </div>
 </div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-<div class="card-content">
-<h3>Cappuccino</h3>
-<p>Perfect milk & coffee blend</p>
-<span class="price">₹180</span>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476b">
-<div class="card-content">
-<h3>Chocolate Brownie</h3>
-<p>Fresh baked dessert</p>
-<span class="price">₹150</span>
-</div>
-</div>
 </div>
 </section>
 
 <section id="reservation" class="section">
 <h2>Reserve a Table</h2>
-<form onsubmit="event.preventDefault(); alert('Reservation Request Sent!');">
-<input type="text" placeholder="Full Name" required>
-<input type="tel" placeholder="Phone Number" required>
-<input type="date" required>
-<input type="time" required>
-<select required>
+
+<form action="https://formsubmit.co/demo@email.com" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="date" name="date" required>
+<input type="time" name="time" required>
+
+<select name="guests" required>
 <option value="">Number of Guests</option>
 <option>1</option>
 <option>2</option>
@@ -170,36 +139,38 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <option>4</option>
 <option>5+</option>
 </select>
-<button type="submit">Book Now</button>
+
+<input type="hidden" name="_captcha" value="false">
+
+<button type="submit">Submit Reservation</button>
 </form>
+
+<br>
+
+<a href="https://rzp.io/l/DEMOBOOKING500" target="_blank">
+<button class="payment-btn">
+Pay ₹500 Advance Booking Fee
+</button>
+</a>
+
+<p style="margin-top:15px;font-size:14px;color:gray;">
+* Reservation confirmed after successful advance payment.
+</p>
+
 </section>
 
 <section id="contact" class="section dark">
 <h2>Contact Us</h2>
-
-<div class="contact-grid">
-
-<div class="contact-info">
-<p>📍 Premium Location, Your City</p>
+<p>📍 Premium Location</p>
 <p>📞 +91 9876543210</p>
-<p>🕒 Open: 9 AM – 11 PM</p>
-</div>
-
-<div class="map">
-<iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086420632786!2d-122.41941568468138!3d37.7749292797597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c5b3b1a3d%3A0x4f1c2d4b8c3a4d5e!2sCafe!5e0!3m2!1sen!2sin!4v1616581234567"
-width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
-</iframe>
-</div>
-
-</div>
+<p>🕒 9 AM – 11 PM</p>
 </section>
 
 <footer>
-<p>© 2026 Kaffa Coffee Roasters | All Rights Reserved</p>
+<p>© 2026 Kaffa Coffee Roasters</p>
 </footer>
 
-<a href="https://wa.me/919876543210" class="whatsapp">💬</a>
+<a href="https://wa.me/919876543210?text=Hi%20I%20have%20completed%20my%20reservation%20payment" class="whatsapp">💬</a>
 
 </body>
 </html>
