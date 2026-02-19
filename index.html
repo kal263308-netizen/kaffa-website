@@ -8,112 +8,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#f5f2eb;
-color:#333;
-}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:#f5f2eb;color:#333;line-height:1.6;}
 
 header{
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.6);
 padding:15px 40px;
 position:fixed;
 width:100%;
 top:0;
-backdrop-filter:blur(8px);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-nav h2{
-color:#fff;
-font-family:'Playfair Display',serif;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:20px;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-font-weight:500;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#c19a6b;
-}
+nav{display:flex;justify-content:space-between;align-items:center;}
+nav h2{color:#fff;font-family:'Playfair Display',serif;}
+nav ul{list-style:none;display:flex;gap:25px;}
+nav a{color:#fff;text-decoration:none;transition:.3s;}
+nav a:hover{color:#c19a6b;}
 
 .hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') no-repeat center center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-position:relative;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+display:flex;align-items:center;justify-content:center;text-align:center;color:white;
 }
 
 .hero h1{
 font-size:3rem;
 font-family:'Playfair Display',serif;
 margin-bottom:20px;
-animation:fadeIn 2s ease;
+animation:fadeIn 1.5s ease;
 }
 
 .btn{
 background:#c19a6b;
-padding:12px 30px;
+padding:14px 35px;
 color:white;
 text-decoration:none;
 border-radius:30px;
-transition:0.3s;
+transition:.3s;
+}
+.btn:hover{background:#a67c52;}
+
+.section{padding:100px 10%;text-align:center;}
+.dark{background:#2b1d15;color:white;}
+
+.about-container{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:40px;
+margin-top:40px;
 }
 
-.btn:hover{
-background:#a67c52;
-}
-
-.section{
-padding:100px 30px;
-text-align:center;
-}
-
-.dark{
-background:#2b1d15;
-color:white;
-}
+.about-text{flex:1;text-align:left;}
+.about-img{flex:1;}
+.about-img img{width:100%;border-radius:15px;}
 
 .menu-grid{
 display:flex;
@@ -129,37 +80,51 @@ width:280px;
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
-transition:0.3s;
+transition:.3s;
 }
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.card-content{
-padding:20px;
-}
-
+.card:hover{transform:translateY(-10px);}
+.card img{width:100%;height:200px;object-fit:cover;}
+.card-content{padding:20px;}
 .price{
 display:inline-block;
 margin-top:10px;
 background:#c19a6b;
 padding:6px 15px;
 border-radius:20px;
-font-weight:bold;
 color:white;
+font-weight:bold;
 }
 
-.dark .card{
-background:#3b2a20;
-color:white;
+.testimonials{
+margin-top:50px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
+
+.testimonial{
+background:white;
+padding:25px;
+width:300px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:40px;
+}
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+transition:.3s;
+}
+.gallery img:hover{transform:scale(1.05);}
 
 footer{
 background:#111;
@@ -186,8 +151,8 @@ from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:translateY(0);}
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
@@ -196,28 +161,34 @@ to{opacity:1;transform:translateY(0);}
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#menu">Menu</a></li>
+<li><a href="#gallery">Gallery</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
+<div>
 <h1>Brewed with Passion,<br>Served with Love.</h1>
-<a href="#menu" class="btn">View Menu</a>
+<a href="#menu" class="btn">Explore Menu</a>
 </div>
 </section>
 
 <section id="about" class="section">
 <h2>About Us</h2>
-<p>Kaffa Coffee Roasters is a premium cafe offering handcrafted coffee, fresh desserts and a cozy experience.</p>
+<div class="about-container">
+<div class="about-text">
+<p>Kaffa Coffee Roasters is a premium cafe offering handcrafted coffee, artisanal desserts and a cozy experience for coffee lovers.</p>
+</div>
+<div class="about-img">
+<img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814">
+</div>
+</div>
 </section>
 
 <section id="menu" class="section dark">
 <h2>Our Signature Menu</h2>
-
 <div class="menu-grid">
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
 <div class="card-content">
@@ -244,11 +215,29 @@ to{opacity:1;transform:translateY(0);}
 <span class="price">₹150</span>
 </div>
 </div>
-
 </div>
 </section>
 
-<section id="contact" class="section">
+<section class="section">
+<h2>What Our Customers Say</h2>
+<div class="testimonials">
+<div class="testimonial">⭐⭐⭐⭐⭐<br>Best coffee in town!</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>Love the cozy vibe.</div>
+<div class="testimonial">⭐⭐⭐⭐⭐<br>Amazing desserts!</div>
+</div>
+</section>
+
+<section id="gallery" class="section">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814">
+</div>
+</section>
+
+<section id="contact" class="section dark">
 <h2>Contact Us</h2>
 <p>📍 Premium Location</p>
 <p>📞 +91 9876543210</p>
