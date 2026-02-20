@@ -22,7 +22,8 @@ z-index:1000;
 nav{display:flex;justify-content:space-between;align-items:center;}
 nav h2{color:#fff;font-family:'Playfair Display',serif;}
 nav ul{list-style:none;display:flex;gap:25px;}
-nav a{color:white;text-decoration:none;}
+nav a{color:white;text-decoration:none;transition:0.3s;}
+nav a:hover{color:#c19a6b;}
 
 .hero{
 height:100vh;
@@ -36,6 +37,7 @@ color:white;
 }
 
 .hero-content{margin-top:100px;}
+
 .hero h1{
 font-size:3rem;
 font-family:'Playfair Display',serif;
@@ -55,6 +57,39 @@ box-shadow:0 10px 25px rgba(193,154,107,0.4);
 
 .section{padding:100px 10%;text-align:center;}
 .dark{background:#2b1d15;color:white;}
+
+.menu-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+width:260px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+.card:hover{transform:translateY(-8px);}
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+.card-content{padding:20px;}
+.price{
+display:inline-block;
+margin-top:10px;
+background:#c19a6b;
+padding:6px 15px;
+border-radius:20px;
+color:white;
+font-weight:bold;
+}
 
 #reservation{
 padding-top:150px;
@@ -120,6 +155,7 @@ padding:15px;
 border-radius:50%;
 text-decoration:none;
 font-size:22px;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -130,6 +166,7 @@ font-size:22px;
 <nav>
 <h2>Kaffa Coffee</h2>
 <ul>
+<li><a href="#menu">Menu</a></li>
 <li><a href="#reservation">Reserve</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="https://wa.me/919876543210" target="_blank">WhatsApp</a></li>
@@ -144,6 +181,51 @@ font-size:22px;
 </div>
 </section>
 
+<!-- MENU -->
+<section id="menu" class="section dark">
+<h2>Our Signature Menu</h2>
+<div class="menu-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<div class="card-content">
+<h3>Espresso</h3>
+<p>Rich bold coffee shot</p>
+<span class="price">₹120</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1498804103079-a6351b050096">
+<div class="card-content">
+<h3>Latte</h3>
+<p>Smooth creamy coffee</p>
+<span class="price">₹190</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<div class="card-content">
+<h3>Club Sandwich</h3>
+<p>Triple layer delight</p>
+<span class="price">₹260</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476b">
+<div class="card-content">
+<h3>Chocolate Brownie</h3>
+<p>Fresh baked dessert</p>
+<span class="price">₹150</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- RESERVATION -->
 <section id="reservation" class="section">
 <h2 style="font-family:'Playfair Display',serif;font-size:34px;margin-bottom:20px;">
 Reserve Your Table
@@ -168,11 +250,8 @@ Reserve Your Table
 <button type="submit">Submit Reservation</button>
 </form>
 
-<!-- PAYMENT BUTTON -->
 <a href="https://rzp.io/l/YOUR499LINK" target="_blank">
-<button class="payment-btn">
-Pay ₹499 Advance Booking Fee
-</button>
+<button class="payment-btn">Pay ₹499 Advance Booking Fee</button>
 </a>
 
 <p style="margin-top:15px;font-size:14px;color:gray;">
@@ -185,7 +264,7 @@ Reservation confirmed after successful advance payment of ₹499.
 <section id="contact" class="section dark">
 <h2>Contact Us</h2>
 <p>📍 Premium Location</p>
-<p>📞 +91 7990114166</p>
+<p>📞 +91 9876543210</p>
 <p>🕒 9 AM – 11 PM</p>
 </section>
 
@@ -193,7 +272,7 @@ Reservation confirmed after successful advance payment of ₹499.
 <p>© 2026 Kaffa Coffee Roasters</p>
 </footer>
 
-<a href="https://wa.me/917990114166?text=Hi%20I%20have%20completed%20my%20₹499%20reservation%20payment"
+<a href="https://wa.me/919876543210?text=Hi%20I%20have%20completed%20my%20₹499%20reservation%20payment"
 class="whatsapp" target="_blank">💬</a>
 
 </body>
