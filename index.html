@@ -207,14 +207,72 @@ Reserve a Table
 </section>
 
 
-<section id="reservation" class="section">
-<h2>Reserve a Table</h2>
+<section id="reservation" class="section" style="background:#f8f5f0;">
 
-<form action="https://formsubmit.co/demo@email.com" method="POST">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
-<input type="date" name="date" required>
-<input type="time" name="time" required>
+<h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:10px;">
+Reserve Your Table
+</h2>
+
+<p style="margin-bottom:40px;color:#666;">
+Book your experience with us.
+</p>
+
+<div style="
+max-width:600px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+border:1px solid #e8dccc;
+">
+
+<form>
+
+<input type="text" placeholder="Full Name" required
+style="width:100%;padding:14px;margin-bottom:18px;border-radius:10px;border:1px solid #ddd;">
+
+<input type="tel" placeholder="Phone Number" required
+style="width:100%;padding:14px;margin-bottom:18px;border-radius:10px;border:1px solid #ddd;">
+
+<input type="date" required
+style="width:100%;padding:14px;margin-bottom:18px;border-radius:10px;border:1px solid #ddd;">
+
+<input type="time" required
+style="width:100%;padding:14px;margin-bottom:18px;border-radius:10px;border:1px solid #ddd;">
+
+<select required
+style="width:100%;padding:14px;margin-bottom:25px;border-radius:10px;border:1px solid #ddd;">
+<option value="">Number of Guests</option>
+<option>1 Guest</option>
+<option>2 Guests</option>
+<option>3 Guests</option>
+<option>4 Guests</option>
+<option>5+ Guests</option>
+</select>
+
+<button type="submit"
+style="
+width:100%;
+padding:16px;
+background:linear-gradient(45deg,#c19a6b,#a67c52);
+color:white;
+border:none;
+border-radius:50px;
+font-size:16px;
+letter-spacing:1px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(193,154,107,0.4);
+transition:0.3s;
+">
+CONFIRM RESERVATION
+</button>
+
+</form>
+
+</div>
+
+</section>
 
 <select name="guests" required>
 <option value="">Number of Guests</option>
