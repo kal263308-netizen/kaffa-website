@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 body{font-family:'Poppins',sans-serif;background:#f5f2eb;color:#333;}
 
 header{
@@ -45,30 +45,61 @@ font-family:'Playfair Display',serif;
 margin-bottom:30px;
 }
 
-/* Premium Button */
 .premium-btn{
 display:inline-block;
 padding:16px 40px;
 font-size:16px;
-letter-spacing:1px;
 background:linear-gradient(45deg,#c19a6b,#a67c52);
 color:white;
-border:none;
 border-radius:50px;
 text-decoration:none;
 transition:0.4s;
 box-shadow:0 10px 25px rgba(193,154,107,0.4);
 margin-top:40px;
 }
-
 .premium-btn:hover{
 transform:translateY(-5px);
 box-shadow:0 15px 35px rgba(193,154,107,0.7);
 }
 
-.section{
-padding:100px 10%;
-text-align:center;
+.section{padding:100px 10%;text-align:center;}
+.dark{background:#2b1d15;color:white;}
+
+.menu-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+width:260px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-8px);
+}
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+.card-content{
+padding:20px;
+}
+.price{
+display:inline-block;
+margin-top:10px;
+background:#c19a6b;
+padding:6px 15px;
+border-radius:20px;
+color:white;
+font-weight:bold;
 }
 
 #reservation{
@@ -105,9 +136,7 @@ color:white;
 border:none;
 border-radius:50px;
 font-size:15px;
-letter-spacing:1px;
 cursor:pointer;
-box-shadow:0 10px 25px rgba(193,154,107,0.4);
 }
 
 footer{
@@ -115,6 +144,18 @@ background:#111;
 color:white;
 text-align:center;
 padding:20px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:20px;
 }
 </style>
 </head>
@@ -125,6 +166,7 @@ padding:20px;
 <nav>
 <h2>Kaffa Coffee</h2>
 <ul>
+<li><a href="#menu">Menu</a></li>
 <li><a href="#reservation">Reserve</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -133,14 +175,50 @@ padding:20px;
 
 <section class="hero">
 <div class="hero-content">
-<h1>
-Brewed with Passion,<br>
-Served with Love.
-</h1>
+<h1>Brewed with Passion,<br>Served with Love.</h1>
+<a href="#reservation" class="premium-btn">Reserve a Table</a>
+</div>
+</section>
 
-<a href="#reservation" class="premium-btn">
-Reserve a Table
-</a>
+<section id="menu" class="section dark">
+<h2>Our Signature Menu</h2>
+<div class="menu-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<div class="card-content">
+<h3>Espresso</h3>
+<p>Rich bold coffee shot</p>
+<span class="price">₹120</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1498804103079-a6351b050096">
+<div class="card-content">
+<h3>Latte</h3>
+<p>Smooth creamy coffee</p>
+<span class="price">₹190</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<div class="card-content">
+<h3>Club Sandwich</h3>
+<p>Triple layer delight</p>
+<span class="price">₹260</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476b">
+<div class="card-content">
+<h3>Chocolate Brownie</h3>
+<p>Fresh baked dessert</p>
+<span class="price">₹150</span>
+</div>
+</div>
 
 </div>
 </section>
@@ -151,7 +229,6 @@ Reserve Your Table
 </h2>
 
 <div class="reservation-card">
-
 <form>
 <input type="text" placeholder="Full Name" required>
 <input type="tel" placeholder="Phone Number" required>
@@ -167,18 +244,17 @@ Reserve Your Table
 <option>5+ Guests</option>
 </select>
 
-<button type="submit">
-Confirm Reservation
-</button>
-
+<button type="submit">Confirm Reservation</button>
 </form>
-
 </div>
+</section>
+
+<section id="contact" class="section dark">
+<h2>Contact Us</h2>
+<p>📍 Premium Location</p>
+<p>📞 +91 9876543210</p>
+<p>🕒 9 AM – 11 PM</p>
 </section>
 
 <footer>
 <p>© 2026 Kaffa Coffee Roasters</p>
-</footer>
-
-</body>
-</html>
